@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: window.width,
     height: window.height,
-    backgroundColor: 'gray',
+    backgroundColor: '#0B1D21',
     padding: 20,
   },
   avatarContainer: {
@@ -34,18 +34,32 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 70,
     top: 20,
+    color:'#FFFFFF',
   },
   item: {
     fontSize: 14,
     fontWeight: '300',
     paddingTop: 5,
-    borderBottomColor:'#000',
+    margin:5,
+    color:'#FFFFFF',
   },
+  separator:{
+    height:1,
+    backgroundColor:'#0E0E0E',
+  },
+  menuBottom:{
+    marginTop:50,
+  }
 });
 
 module.exports = class Menu extends Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      nbFooting:0,
+      nbFooter:0,
+    }
   }
 
   render() {
@@ -57,11 +71,19 @@ module.exports = class Menu extends Component {
             source={{ uri, }}/>
           <Text style={styles.name}>{this.props.login}</Text>
         </View>
-
-        <Text style={styles.item}>Footing plannifiés</Text>
-        <Text style={styles.item}>Rechercher</Text>
-        <Text style={styles.item}>Contacts</Text>
-        <Text style={styles.item}>A propos</Text>
+        <Text style={styles.item}>Nouvelle recherche</Text>
+        <Text style={styles.separator}/>
+        <Text style={styles.item}>Trouver un footing</Text>
+        <Text style={styles.separator}/>
+        <Text style={styles.item}>Mes footing({this.state.nbFooting})</Text>
+        <Text style={styles.separator}/>
+        <Text style={styles.item}>Mes joggeurs({this.state.nbFooter})</Text>
+        <View style={styles.menuBottom}>
+          <Text style={styles.separator}/>
+          <Text style={styles.item}>Nous contacter</Text>
+          <Text style={styles.separator}/>
+          <Text style={styles.item}>A propos!</Text>
+        </View>
       </ScrollView>
     );
   }

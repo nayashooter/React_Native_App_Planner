@@ -5,7 +5,7 @@ import React , {Component,Alert}  from 'react-native';
 let styles = {
   toolbar :{
     height : 56,
-    backgroundColor :'#000',
+    backgroundColor :'#F1F1F1',
   }
 }
 

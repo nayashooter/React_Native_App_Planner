@@ -9,7 +9,8 @@ import React, {
   StyleSheet,
   Text,
   View,
-  AsyncStorage
+  AsyncStorage,
+  Image
 } from 'react-native';
 
 import Toolbar  from './android/components/toolbar/toolbar';
@@ -76,6 +77,9 @@ class Dictionary extends Component {
       <SideMenu menu={menu} >
         <View style={stylesApp.container}>
           <Toolbar/>
+            <Image
+              source={require('./android/images/bckg.png')}
+              style={styles.image} />
           <Text style={styles.welcome}>
             Welcome to React Native {this.state.loginInfo}
           </Text>
@@ -96,12 +100,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  image: {
+    flex: 1,
+      resizeMode: 'stretch',
   },
   instructions: {
     textAlign: 'center',
