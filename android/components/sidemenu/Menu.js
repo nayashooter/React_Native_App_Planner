@@ -1,4 +1,6 @@
-const React = require('react-native');
+import  React   from 'react-native';
+import  Icon    from 'react-native-vector-icons/FontAwesome';
+
 const {
   Dimensions,
   StyleSheet,
@@ -41,7 +43,8 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     paddingTop: 5,
     margin:5,
-    color:'#FFFFFF',
+    color:'#F1F1F1',
+    paddingLeft:10,
   },
   separator:{
     height:1,
@@ -49,6 +52,9 @@ const styles = StyleSheet.create({
   },
   menuBottom:{
     marginTop:50,
+  },
+  iconMenu:{
+    marginRight:20,
   }
 });
 
@@ -71,18 +77,57 @@ module.exports = class Menu extends Component {
             source={{ uri, }}/>
           <Text style={styles.name}>{this.props.login}</Text>
         </View>
-        <Text style={styles.item}>Nouvelle recherche</Text>
+
+        <Text style={styles.item}>
+          <Icon
+            name="search"
+            size={20}
+            color="#F1F1F1"
+            style={styles.iconMenu}/>
+          Nouvelle recherche
+        </Text>
         <Text style={styles.separator}/>
-        <Text style={styles.item}>Trouver un footing</Text>
+        <Text style={styles.item}>
+          <Icon
+            name="search-plus"
+            size={20}
+            color="#F1F1F1"
+            style={styles.iconMenu}/>
+          Trouver un footing</Text>
         <Text style={styles.separator}/>
-        <Text style={styles.item}>Mes footing({this.state.nbFooting})</Text>
+        <Text style={styles.item}>
+          <Icon
+            name="list"
+            size={20}
+            color="#F1F1F1"
+            style={styles.iconMenu}/>
+          Mes footing({this.state.nbFooting})</Text>
         <Text style={styles.separator}/>
-        <Text style={styles.item}>Mes joggeurs({this.state.nbFooter})</Text>
+        <Text style={styles.item}>
+          <Icon
+            name="users"
+            size={20}
+            color="#F1F1F1"
+            style={styles.iconMenu}/>
+          Mes joggeurs({this.state.nbFooter})</Text>
         <View style={styles.menuBottom}>
           <Text style={styles.separator}/>
-          <Text style={styles.item}>Nous contacter</Text>
+          <Text style={styles.item}>
+            <Icon
+              name="phone"
+              size={20}
+              color="#F1F1F1"
+              style={styles.iconMenu}/>
+            Nous contacter</Text>
           <Text style={styles.separator}/>
-          <Text style={styles.item}>A propos!</Text>
+          <Text style={styles.item}>
+            <Icon
+              name="info-circle"
+              size={20}
+              color="#F1F1F1"
+              style={styles.iconMenu}/>
+            A propos!</Text>
+          <Text style={styles.separator}/>
         </View>
       </ScrollView>
     );

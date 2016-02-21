@@ -16,6 +16,7 @@ import React, {
 import Toolbar  from './android/components/toolbar/toolbar';
 import SideMenu from 'react-native-side-menu';
 import Menu     from './android/components/sidemenu/Menu';
+import Icon     from 'react-native-vector-icons/FontAwesome';
 
 let STORAGE_KEY = "infoFacebook";
 let infoFacebook = "LUCENAY Yannick";
@@ -83,12 +84,6 @@ class Dictionary extends Component {
           <Text style={styles.welcome}>
             Welcome to React Native {this.state.loginInfo}
           </Text>
-          <Text style={styles.instructions}>
-            {this.state.loginInfo.name}
-          </Text>
-          <Text style={styles.instructions}>
-            {this.state.messages}
-          </Text>
         </View>
       </SideMenu>
     );
@@ -105,10 +100,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    height:200,
   },
   image: {
     flex: 1,
       resizeMode: 'stretch',
+      height:50,
   },
   instructions: {
     textAlign: 'center',
